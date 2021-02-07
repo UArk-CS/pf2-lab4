@@ -20,10 +20,12 @@ public:
     // Methods
     string getName() const;
     string getAddress() const;
+    StudentNode *getNext() const;
     float getGPA() const;
     void setName(string name_);
     void setAddress(string address_);
     void setGPA(float gpa_);
+    void setNext(StudentNode *next);
     void print() const;
 
 private:
