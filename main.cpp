@@ -8,38 +8,31 @@
 int main()
 {
 
-    // Test default constructor
-    Student john;
-    cout << "\nprinting john object\n";
-    john.print();
+    float *ptr = new float;
+    *ptr = 3.14159;
+    cout << *ptr << endl;
+    cout << endl;
 
-    // Test set methods
-    john.setName("John");
-    john.setAddress("Johnson, AR");
-    john.setGPA(3.2);
-    cout << "\nprinting john object\n";
-    john.print();
+    Student *john = new Student();
+    john->setName("John");
+    john->setAddress("Johnson, AR");
+    john->setGPA(3.2);
+    john->print();
 
-    // Test constructor with parameters
-    Student fred("Fred", "Fayetteville, AR", 4.0);
-    cout << "\nprinting fred object\n";
-    fred.print();
+    cout << endl;
 
-    // Test copy constructor
-    Student bob(fred);
-    cout << "\nprinting bob object\n";
-    fred.print();
+    Student *fred = new Student(*john);
+    fred->setName("Fred");
+    fred->setAddress("Bentonville, AR");
+    fred->setGPA(4.0);
+    fred->print();
 
-    // Testing array of objects
-    Student list[10];
-    for (int i = 0; i < 3; i++)
-    {
-        cout << "\nprinting object " << i << "\n";
-        list[i].setName("name tba");
-        list[i].setAddress("address tba");
-        list[i].setGPA(i + 1);
-        list[i].print();
-    }
+    cout << endl;
+
+    cout << "Print using getters" << endl;
+    cout << "Name: " << fred->getName() << endl;
+    cout << "Address: " << fred->getAddress() << endl;
+    cout << "GPA: " << fred->getGPA() << endl;
 
     return 0;
 
