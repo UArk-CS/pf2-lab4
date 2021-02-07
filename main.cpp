@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "Student.h"
+#include "StudentNode.h"
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
     cout << *ptr << endl;
     cout << endl;
 
-    Student *john = new Student();
+    StudentNode *john = new StudentNode();
     john->setName("John");
     john->setAddress("Johnson, AR");
     john->setGPA(3.2);
@@ -21,7 +21,7 @@ int main()
 
     cout << endl;
 
-    Student *fred = new Student(*john);
+    StudentNode *fred = new StudentNode(*john);
     fred->setName("Fred");
     fred->setAddress("Bentonville, AR");
     fred->setGPA(4.0);

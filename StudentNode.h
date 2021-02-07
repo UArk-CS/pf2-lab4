@@ -2,20 +2,20 @@
 // Created by Benjamin Worthington on 2/7/21.
 //
 
-#ifndef PF2_LAB4_STUDENT_H
-#define PF2_LAB4_STUDENT_H
+#ifndef PF2_LAB4_STUDENTNODE_H
+#define PF2_LAB4_STUDENTNODE_H
 
 #include <iostream>
 using namespace std;
 
-class Student
+class StudentNode
 {
 public:
     // Constructors
-    Student();
-    Student(string name_, string address_, float gpa_);
-    Student(const Student & student);
-    ~Student();
+    StudentNode();
+    StudentNode(string name_, string address_, float gpa_, StudentNode *Next_);
+    StudentNode(const StudentNode &student);
+    ~StudentNode();
 
     // Methods
     string getName() const;
@@ -30,6 +30,7 @@ private:
     string Name;
     string Address;
     float GPA;
+    StudentNode *Next;
 };
 
-#endif //PF2_LAB4_STUDENT_H
+#endif //PF2_LAB4_STUDENTNODE_H
