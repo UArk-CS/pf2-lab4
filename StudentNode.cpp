@@ -12,12 +12,12 @@ StudentNode::StudentNode()
     Next = NULL;
 }
 
-StudentNode::StudentNode(string name_, string address_, float gpa_, StudentNode *Next_)
+StudentNode::StudentNode(string name_, string address_, float gpa_)
 {
     Name = name_;
     Address = address_;
     GPA = gpa_;
-    Next = Next_;
+    Next = NULL;
 }
 
 StudentNode::StudentNode(const StudentNode &student)
@@ -25,7 +25,7 @@ StudentNode::StudentNode(const StudentNode &student)
     Name = student.Name;
     Address = student.Address;
     GPA = student.GPA;
-    Next = student.Next;
+    Next = NULL;
 }
 
 StudentNode::~StudentNode()
@@ -66,6 +66,10 @@ void StudentNode::print() const
 {
     cout << "Name: " << Name << "\n"
          << "Address: " << Address << "\n" << "GPA: " << GPA << "\n";
+
+    if (Next != NULL) {
+        Next->print();
+    }
 }
 
 StudentNode *StudentNode::getNext() const {

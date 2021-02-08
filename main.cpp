@@ -8,31 +8,13 @@
 int main()
 {
 
-    float *ptr = new float;
-    *ptr = 3.14159;
-    cout << *ptr << endl;
-    cout << endl;
+    StudentNode *ptr1 = new StudentNode("John", "Johnson, AR", 2.5);
+    StudentNode *ptr2 = new StudentNode("Fred", "Fayetteville, AR", 3.5);
+    StudentNode *ptr3 = new StudentNode("Sam", "Springdale, AR", 2.9);
 
-    StudentNode *john = new StudentNode();
-    john->setName("John");
-    john->setAddress("Johnson, AR");
-    john->setGPA(3.2);
-    john->print();
-
-    cout << endl;
-
-    StudentNode *fred = new StudentNode(*john);
-    fred->setName("Fred");
-    fred->setAddress("Bentonville, AR");
-    fred->setGPA(4.0);
-    fred->print();
-
-    cout << endl;
-
-    cout << "Print using getters" << endl;
-    cout << "Name: " << fred->getName() << endl;
-    cout << "Address: " << fred->getAddress() << endl;
-    cout << "GPA: " << fred->getGPA() << endl;
+    ptr1->setNext(ptr2);
+    ptr2->setNext(ptr3);
+    ptr1->print();
 
     return 0;
 
