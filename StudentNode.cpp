@@ -66,6 +66,10 @@ void StudentNode::print() const
 {
     cout << "Name: " << Name << "\n"
          << "Address: " << Address << "\n" << "GPA: " << GPA << "\n";
+
+    if (Next != NULL) {
+        Next->print();
+    }
 }
 
 StudentNode *StudentNode::getNext() const {
