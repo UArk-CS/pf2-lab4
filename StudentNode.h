@@ -13,7 +13,7 @@ class StudentNode
 public:
     // Constructors
     StudentNode();
-    StudentNode(string name_, string address_, float gpa_, StudentNode *Next_);
+    StudentNode(string name_, string address_, float gpa_);
     StudentNode(const StudentNode &student);
     ~StudentNode();
 
